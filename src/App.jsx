@@ -6,17 +6,16 @@ function App() {
             <div className="hero bg-base-200 min-h-screen">
                 <div className="navbar bg-base-100 shadow-sm absolute top-0">
                     <div className="navbar-start">
-                        <a className="btn btn-ghost text-xl">SCC</a>
+                        <a className="btn btn-ghost text-xl">Smart Course Companion</a>
                     </div>
                     <div className="navbar-center">
                         <ul className="menu menu-horizontal px-1">
-                            <li><a>Admins</a></li>
-                            <li><a>Students</a></li>
+                            {/* <li><a>Admins</a></li> */}
+                            {/* <li><a>Students</a></li> */}
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <Link className='btn' to="/auth/signin">Sign In</Link>
-                        <Link className='btn' to="/auth/signup">Sign Up</Link>
+                        <Link className='btn btn-link' to="/auth/signin">Sign In</Link>
                     </div>
                 </div>
                 <div className="hero-content flex flex-col gap-10">

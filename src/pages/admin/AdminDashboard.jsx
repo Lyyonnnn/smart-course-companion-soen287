@@ -1,14 +1,19 @@
 import AdminNavBar from "../../components/admin/AdminNavbar"
 import CourseOptions from "../../components/admin/CourseOptions"
-import { useState } from "react"
-
+import CourseStatus from "../../components/admin/CourseStatus"
 
 function AdminDashboard() {
-        const [enabled, setEnabled] = useState(true)
+
+    const courses = [
+        {code: "COMP 249", title: "Object-Oriented Programming II", term: "Winter 2026", },
+        {code: "ENGR 233", title: "Applied Advanced Calculus", term: "Winter 2026" },
+        {code: "SOEN 228", title: "System Hardware", term: "Winter 2026" },
+        {code: "SOEN 287", title: "Web Programming", term: "Winter 2026" },
+        {code: "SOEN 287", title: "Web Programming", term: "Winter 2026" },
+    ];
     
     return (
         <>
-
             <AdminNavBar></AdminNavBar>
 
             <div className="flex flex-col items-center gap-10 p-10"> 
@@ -37,7 +42,7 @@ function AdminDashboard() {
                     </div>
                 </div>
 
-                <div className="tabs tabs-lift w-1/2 flex flex-row justify-center">
+                <div className="tabs tabs-lift w-2/3 flex flex-row justify-center">
                     <input type="radio" name="my_tabs_3" className="tab" aria-label="Course List" defaultChecked />
                     <div className="tab-content bg-base-100 border-base-300 p-6">
 
@@ -46,52 +51,23 @@ function AdminDashboard() {
                             <input type="search" placeholder="Search courses" />
                         </label>
 
+                        
+
                         <ul className="list bg-base-100 rounded-box shadow">
-                            <li className="list-row">
-                                <button className={`btn btn-square btn-ghost flex items-center ${enabled ? "" : "btn-outline btn-error"}`} onClick={() => setEnabled(false)}>
-                                    <img className="w-5" src="https://img.icons8.com/?size=100&id=82553&format=png&color=000000" alt="Disabled" />
-                                </button>
-                                <button className={`btn btn-square btn-ghost flex items-center ${enabled ? "btn-outline btn-success" : ""}`} onClick={() => setEnabled(true)}> 
-                                    <img className="w-5" src="https://img.icons8.com/?size=100&id=82759&format=png&color=000000" alt="Enabled" />
-                                </button>
+                        {courses.map((course, index) => (
+                            <li key={index} className="list-row">
+                                <CourseStatus />
                                 <div>
-                                    <div>COMP 249 - Object-Oriented Programming II</div>
-                                    <div className="text-xs font-semibold opacity-60">Winter 2026</div>
+                                    <div>
+                                        {course.code} - {course.title}
+                                    </div>
+                                    <div className="text-xs font-semibold opacity-60">
+                                        {course.term}
+                                    </div>
                                 </div>
-                                <CourseOptions></CourseOptions>
+                                <CourseOptions />
                             </li>
-
-                            <li className="list-row">
-                                <div>
-                                    <div>ENGR 233 - Applied Advanced Calculus</div>
-                                    <div className="text-xs font-semibold opacity-60">Winter 2026</div>
-                                </div>
-                                <CourseOptions></CourseOptions>
-                            </li>
-
-                            <li className="list-row">
-                                <div>
-                                    <div>SOEN 228 - System Hardware</div>
-                                    <div className="text-xs font-semibold opacity-60">Winter 2026</div>
-                                </div>
-                                <CourseOptions></CourseOptions>
-                            </li>
-
-                            <li className="list-row">
-                                <div>
-                                    <div>SOEN 287 - Web Programming</div>
-                                    <div className="text-xs font-semibold opacity-60">Winter 2026</div>
-                                </div>
-                                <CourseOptions></CourseOptions>
-                            </li>
-                            
-                            <li className="list-row">
-                                <div>
-                                    <div>SOEN 287 - Web Programming</div>
-                                    <div className="text-xs font-semibold opacity-60">Winter 2026</div>
-                                </div>
-                                <CourseOptions></CourseOptions>
-                            </li>
+                        ))}
                         </ul>
 
                     </div>
