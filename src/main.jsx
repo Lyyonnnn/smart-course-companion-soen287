@@ -8,17 +8,20 @@ import AdminCourse from './pages/admin/AdminCourse.jsx';
 import CourseDashboard from './pages/course/CourseDashboard.jsx';
 import SignUp from './pages/auth/Signup.jsx';
 import SignIn from './pages/auth/Signin.jsx';
+import StudentDashboard from './pages/student/StudentDashboard.jsx';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App/>}/>
-                <Route path="/course" element={<CourseDashboard/>}/>
+                <Route path="/student/course" element={<CourseDashboard/>}/>
                 <Route path="/auth/signup" element={<SignUp/>}/>
                 <Route path="/auth/signin" element={<SignIn/>}/>
                 <Route path="/admin/dashboard" element={<AdminDashboard/>}/>
                 <Route path="/admin/course" element={<AdminCourse/>}/>
+                <Route path="/student/dashboard" element={<StudentDashboard/>}/>
+
             </Routes>
         </BrowserRouter>
     </StrictMode>

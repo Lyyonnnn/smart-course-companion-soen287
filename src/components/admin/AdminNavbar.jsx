@@ -5,7 +5,7 @@ function AdminNavBar() {
     <>
         <div className="navbar bg-base-100 shadow-sm">
                 <div className="navbar-start">
-                    <a className="btn btn-ghost text-xl">Admin Dashboard - Nathan</a>
+                    <a className="btn btn-ghost text-xl">Admin Dashboard</a>
                 </div>
                 <div className="navbar-center">
                     <ul className="menu menu-horizontal px-1">
