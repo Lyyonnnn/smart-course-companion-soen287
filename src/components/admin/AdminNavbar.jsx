@@ -9,12 +9,12 @@ function AdminNavBar() {
                 </div>
                 <div className="navbar-center">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Admins</a></li>
-                        <li><a>Students</a></li>
+                        {/* <li><a>Admins</a></li> */}
+                        {/* <li><a>Students</a></li> */}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link className='btn' to="/">Sign Out</Link>
+                        <Link className='btn btn-link' to="/">Sign Out</Link>
                 </div>
         </div>
     </>
