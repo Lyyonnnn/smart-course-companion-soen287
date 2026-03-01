@@ -9,6 +9,7 @@ import CourseDashboard from './pages/course/CourseDashboard.jsx';
 import SignUp from './pages/auth/Signup.jsx';
 import SignIn from './pages/auth/Signin.jsx';
 import StudentDashboard from './pages/student/StudentDashboard.jsx';
+import StudentAssessments from './pages/student/StudentAssessments.jsx';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/admin/dashboard" element={<AdminDashboard/>}/>
                 <Route path="/admin/course" element={<AdminCourse/>}/>
                 <Route path="/student/dashboard" element={<StudentDashboard/>}/>
+                <Route path="/student/assessments" element={<StudentAssessments/>}/>
 
             </Routes>
         </BrowserRouter>

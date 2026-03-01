@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function StudentNavbar() {
+function StudentNavbar({ firstName = "Duval", lastName = "Kwali" }) {
+
+  const initials =
+    firstName.charAt(0).toUpperCase() +
+    lastName.charAt(0).toUpperCase();
+
   return (
     <>
         <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
@@ -13,31 +18,57 @@ function StudentNavbar() {
       </div>
 
       {/* Center */}
-      {/* <div className="navbar-center">
-        <ul className="menu menu-horizontal px-1">
+       <div className="navbar-center">
+        <ul className="menu menu-horizontal menu-lg px-10 gap-4">
+          <li>
+            <Link to="/student/dashboard">Dashboard</Link>
+          </li>
           <li>
             <Link to="/student/assessments">Assessments</Link>
           </li>
+          <li>
+            <Link to="/student/add-courses">Add Courses</Link>
+          </li>
         </ul>
-      </div> */}
+      </div> 
 
       {/* Right */}
       <div className="navbar-end gap-4">
 
-        {/* Circular Initials Avatar */}
-        {/* <div className="avatar placeholder">
-          <div className="bg-primary text-primary-content rounded-full w-10">
-            <span className="text-sm font-bold">DUVAL</span>
-          </div>
-        </div> */}
+        {/* Avatar Dropdown */}
 
-        <Link to="/" className="btn btn-link">
-          Sign Out
-        </Link>
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="bg-primary text-primary-content rounded-full w-10 flex items-center justify-center">
+              <span className="text-sm font-bold">{initials}</span>
+            </div>
+          </label>
 
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <Link to="/student/profile">Profile</Link>
+            </li>
+            <li>
+              <Link to="/student/grades">Grades</Link>
+            </li>
+            <li>
+              <Link to="/student/assessments">Assessments</Link>
+            </li>
+            <li>
+              <Link to="/student/add-courses">Add Courses</Link>
+            </li>
+            <li>
+              <Link to="/student/settings">Settings</Link>
+            </li> 
+          </ul>
+        </div>
+        <Link to="/">Sign Out</Link>
       </div>
     </div>
-    </>
+  </>
   )
 }
 

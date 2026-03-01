@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.react-calendar__tile {
+  overflow: visible !important;
+}
+
+.react-calendar {
+  overflow: visible !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: inherit !important;
+}
