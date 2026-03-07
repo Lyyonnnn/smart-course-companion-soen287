@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import AdminNavBar from "../../components/admin/AdminNavbar"
 import CourseStatus from "../../components/admin/CourseStatus"
 import { Fragment } from 'react';
@@ -73,15 +74,40 @@ function AdminDashboard() {
                                             {course.term}
                                         </div>
                                     </div>
-                                    <div className="flex flex-row ml-auto gap-1">
-                                        <button className="btn btn-square btn-ghost" onClick={()=>document.getElementById(`${course.name}_view_modal`).showModal()}>
-                                            <img className="w-5" src="https://img.icons8.com/?size=100&id=85028&format=png&color=000000" alt="View" />
+                                    <div className="flex flex-row ml-auto gap-3 items-center">
+                                        <button
+                                            className="btn btn-square btn-ghost"
+                                            onClick={() => document.getElementById(`${course.name}_view_modal`).showModal()}
+                                        >
+                                            <img
+                                                className="w-5"
+                                                src="https://img.icons8.com/?size=100&id=85028&format=png&color=000000"
+                                                alt="View"
+                                            />
                                         </button>
+<<<<<<< HEAD
                                         <button className="btn btn-square btn-ghost" onClick={()=>document.getElementById(`${course.name}_edit_modal`).showModal()}>
                                             <img className="w-5" src="https://img.icons8.com/?size=100&id=86373&format=png&color=000000" alt="Edit" />
                                         </button>
                                         <button className="btn btn-square btn-ghost">
                                             <img className="w-5" src="https://img.icons8.com/?size=100&id=99933&format=png&color=000000" alt="Delete" />
+=======
+
+                                        <Link to="/admin/course" state={{ course }}>
+                                            <img
+                                                className="w-5"
+                                                src="https://img.icons8.com/?size=100&id=86373&format=png&color=000000"
+                                                alt="Edit"
+                                            />
+                                        </Link>
+
+                                        <button className="btn btn-square btn-ghost">
+                                            <img
+                                                className="w-5"
+                                                src="https://img.icons8.com/?size=100&id=99933&format=png&color=000000"
+                                                alt="Delete"
+                                            />
+>>>>>>> 1b06382 (Implemented AdminCourse page and edit navigation from dashboard)
                                         </button>
                                     </div>
                                 </li>
@@ -110,6 +136,7 @@ function AdminDashboard() {
             </div>
 
             {courses.map((course, index) => (
+<<<<<<< HEAD
                 <Fragment key={index}>
                     <dialog id={`${course.name}_view_modal`} className="modal">
                         <div className="modal-box">
@@ -139,6 +166,28 @@ function AdminDashboard() {
                                             <th></th>
                                             <th>Name</th>
                                             <th>Weight</th>
+=======
+                <dialog key={index} id={`${course.name}_view_modal`} className="modal">
+                    <div className="modal-box">
+                        <h3 className="font-bold text-lg">{course.code} - {course.name}</h3>
+                        <p className="py-4">{course.term}</p>
+                        <p className="font-bold">Course Assessments</p>
+                        <div className="overflow-x-auto">
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Weight</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {assessments.map((assessment, assessmentIndex) => (
+                                        <tr key={assessmentIndex}>
+                                            <th>{assessmentIndex + 1}</th>
+                                            <td>{assessment.name}</td>
+                                            <td>{assessment.weight}%</td>
+>>>>>>> 1b06382 (Implemented AdminCourse page and edit navigation from dashboard)
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -154,6 +203,7 @@ function AdminDashboard() {
                             </div>
                             
                         </div>
+<<<<<<< HEAD
                         <form method="dialog" className="modal-backdrop">
                             <button>close</button>
                         </form>
@@ -199,9 +249,15 @@ function AdminDashboard() {
                     </dialog>
                 </Fragment>
                 
+=======
+                    </div>
+                    <form method="dialog" className="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
+>>>>>>> 1b06382 (Implemented AdminCourse page and edit navigation from dashboard)
             ))}
         </>
-
     )
 }
 
