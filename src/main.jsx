@@ -7,7 +7,7 @@ import AdminDashboard from './pages/admin/AdminDashboard.jsx';
 import AdminCourse from './pages/admin/AdminCourse.jsx';
 import CourseDashboard from './pages/course/CourseDashboard.jsx';
 import SignUp from './pages/auth/SignUp.jsx';
-import SignIn from './pages/auth/Signin.jsx';
+import SignIn from './pages/auth/SignIn.jsx';
 import StudentDashboard from './pages/student/StudentDashboard.jsx';
 import StudentAssessments from './pages/student/StudentAssessments.jsx';
 import StudentAddCourse from './pages/student/StudentAddCourse.jsx';
