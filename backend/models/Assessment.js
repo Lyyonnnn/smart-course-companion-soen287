@@ -15,20 +15,22 @@ const assessmentSchema = new mongoose.Schema(
     },
     grade: {
       type: Number,
+      default: null,
       min: 0,
       max: 100,
-      default: null,
     },
-
-    // relationship will be refined in Part 3
     course: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",
+      required: [true, "Assessment must belong to a course"],
     },
   },
   {
     timestamps: true,
   }
 );
+
+// Fast lookup of assessments by course
+assessmentSchema.index({ course: 1 });
 
 module.exports = mongoose.model("Assessment", assessmentSchema);
